@@ -1,0 +1,13 @@
+/.idea
+target/
+*.iml
+.settings/
+.classpath
+.factorypath
+.project
+/payment/.idea
+.logs
+*.log
+*.logs
+.sonar/
+localdev.properties
