@@ -1,0 +1,19 @@
+package com.rakesh.datastructures.matrix;
+
+public class FillMatrixSpirally {
+
+	public static void main(String[] a) {
+           
+          
+
+	}
+
+ public static fillMatrix(int n){
+
+   
+  
+
+}
+
+}
+-x C-c
