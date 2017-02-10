@@ -18,9 +18,27 @@ public class MaximumProductArray {
 	public static void main(String[] args){
 		
 		Integer[] data = {-2, -3, 0, -2, -40};
-		printMaxProduct(data);
+		printMaxProduct2(data);
 	}
 
+	private static void printMaxProduct2(Integer[] a){
+		
+		if(a == null || a.length ==0 )
+			return;
+		
+		Integer globalMax = a[0];
+		Integer localMin = a[0];
+		Integer localMax = a[0];
+		
+		for(int i=1 ; i< a.length ; i++){
+			
+			int temp = localMax;
+			localMax = Math.max(Math.max(a[i] *localMax , a[i]), localMin* a[i]);
+			localMin = Math.min(Math.min(a[i]*localMin, localMin), temp*a[i]);
+			globalMax = Math.max(globalMax, localMax);
+		}
+		System.out.println(globalMax);
+	}
 	
 	private static void printMaxProduct(Integer[] a){
 		
