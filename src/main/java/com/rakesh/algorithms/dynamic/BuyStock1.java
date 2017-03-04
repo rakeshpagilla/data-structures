@@ -6,7 +6,7 @@ public class BuyStock1 {
 
 	public static void main(String[] a) {
 		
-		int[] prices = {3,7,1,6,5};
+		int[] prices = {3,7,0,1,6,5};
 		
 		System.out.println("Max Profit " + maxProfit(prices) );
 
@@ -19,6 +19,7 @@ public class BuyStock1 {
 
 		for (int i = 1; i < prices.length; i++) {
 			maxProfit = Math.max(maxProfit, prices[i] - minElement);
+			System.out.println(maxProfit);
 			minElement = Math.min(minElement, prices[i]);
 		}
 		return maxProfit;

@@ -1,6 +1,5 @@
 package com.rakesh.datastructures.string;
 
-import java.util.Scanner;
 
 public class BearAndTheSteadyGene {
 

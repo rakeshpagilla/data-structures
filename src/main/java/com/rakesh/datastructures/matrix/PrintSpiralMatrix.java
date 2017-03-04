@@ -13,7 +13,6 @@ public class PrintSpiralMatrix {
 
 		int m = mat.length;
 		int n = mat[0].length;
-		System.out.println(m + " " + n);
 
 		int x = 0, y = 0;
 
@@ -47,7 +46,6 @@ public class PrintSpiralMatrix {
 			for (int i = 0; i < m - 1; i++) {
 				System.out.println(mat[x--][y]);
 			}
-			System.out.println(" m" + m + " n" + n);
 
 			x++;
 			y++;

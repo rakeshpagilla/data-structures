@@ -15,7 +15,7 @@ public class IsomorphicStrings {
 	//	System.out.println(isIsomorphic("",null));
 		
 		System.out.println(isIsomorphic("ab","ba"));
-		System.out.println(isIsomorphic("eggo","foog"));
+		System.out.println(isIsomorphic("bar","foo"));
 	}
 	
 	public static boolean isIsomorphic(String s, String t){
@@ -39,7 +39,7 @@ public class IsomorphicStrings {
 	            if(map.get(c1)!=c2)// if not consistant with previous ones
 	                return false;
 	        }else{
-	            if(map.containsValue(c2)) //if c2 is already being mapped
+	            if(map.containsValue(c2)) //if c2 is already being mapped. Take example "bar" and "foo"
 	                return false;
 	            map.put(c1, c2);
 	        }
