@@ -1,6 +1,6 @@
-package com.rakesh.datastructures.common;
+package com.rakesh.datastructures.stackqueue;
 /*
- * Given a string containing just the characters ’(’, ’)’, ’’, ’’, ’[’ and ’]’, determine if the input string is valid. 
+ * Given a string containing just the characters ’(’, ’)’, ’’, ’’, ’[’ and ’]’, determine if the input string is valid.
  * The brackets must close in the correct order, "()" and "()[]" are all valid but "(]" and "([)]" are not.
  */
 
@@ -11,7 +11,7 @@ public class ValidParentheses {
 
 	public static void main(String[] a) {
 
-		System.out.println(isValidParentheses("[]()"));
+		System.out.println(isValidParentheses("{{()}}"));
 	}
 
 	private static Boolean isValidParentheses(String str) {
@@ -39,5 +39,4 @@ public class ValidParentheses {
 		}
 		return stack.empty();
 	}
-
 }
