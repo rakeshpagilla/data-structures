@@ -11,7 +11,7 @@ public class ValidParentheses {
 
 	public static void main(String[] a) {
 
-		System.out.println(isValidParentheses("{{()}}"));
+		System.out.println(isValidParentheses("{{()}}(("));
 	}
 
 	private static Boolean isValidParentheses(String str) {

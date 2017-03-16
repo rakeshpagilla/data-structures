@@ -54,7 +54,7 @@ public class LargestRectangleHistogram {
 		for (i = 0; i < a.length;) {
 
 			if (stack.isEmpty() || a[stack.peek()] <= a[i])
-				stack.add(i++);
+				stack.push(i++);
 			else {
 				int top = stack.pop();
 
