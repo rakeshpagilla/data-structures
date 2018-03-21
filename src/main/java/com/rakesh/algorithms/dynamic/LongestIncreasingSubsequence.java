@@ -20,6 +20,8 @@ import java.util.Arrays;
  *         example. See below post for O(n Log n) solution.
  *         http://www.geeksforgeeks.org/longest-monotonically-increasing-
  *         subsequence-size-n-log-n/
+ *         https://www.youtube.com/watch?v=CE2b_-XfVDk
+ *
  */
 public class LongestIncreasingSubsequence {
 

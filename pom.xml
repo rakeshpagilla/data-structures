@@ -78,33 +78,12 @@
 					</compilerArguments>
 				</configuration>
 			</plugin>
-
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-failsafe-plugin</artifactId>
-				<configuration combine.self="override">
-					<systemPropertyVariables>
-						<build.env>external</build.env>
-						<maven.test.failure.ignore>false</maven.test.failure.ignore>
-						<mybatis.environment>manual</mybatis.environment>
-						<mybatis.host>localhost</mybatis.host>
-						<mybatis.database>charter</mybatis.database>
-						<mybatis.username>postgres</mybatis.username>
-						<mybatis.password>postgres</mybatis.password>
-					</systemPropertyVariables>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 			</plugin>
 			<!-- this is configured in parent pom, but we do have to define it here 
 				or else it won't be part of our build -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>buildnumber-maven-plugin</artifactId>
-			</plugin>
 		</plugins>
 
 	</build>
