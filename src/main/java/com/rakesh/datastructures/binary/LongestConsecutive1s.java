@@ -16,12 +16,7 @@ public class LongestConsecutive1s {
 	public static void main(String[] a){
 		
 		int val = 6;
-	//	findLongest(val);
-		Random rd = new Random();
-		
-		for(int i =0 ; i < val ; i++){
-			System.out.println(rd.nextInt(val));
-		}
+		findLongest(val);
 	}
 
 	private static void findLongest(int x) {

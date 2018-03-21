@@ -5,7 +5,8 @@ package com.rakesh.datastructures.common;
 
 /**
  * @author RPagilla 
- *
+ *https://www.dotnetperls.com/shuffle-java
+ *http://introcs.cs.princeton.edu/java/21function/Shuffle.java.html
  * Created at 10:06:15 PM
  *
  */
@@ -16,7 +17,9 @@ public class ShuffleArray {
                 int n = a.length;
                 Random random = new Random();
                 for (int i = 0; i < n; i++) {
+                	// Get a random index of the array past i.
                         int change = i + random.nextInt(n - i);
+                        System.out.println(change);
                         swap(a, i, change);
                 }
         }
@@ -31,7 +34,7 @@ public class ShuffleArray {
                 int[] a = new int[] { 1, 2, 3, 4, 5, 6, 7 };
                 shuffleArray(a);
                 for (int i : a) {
-                        System.out.println(i);
+                        System.out.print(i + " ");
                 }
         }
 }
