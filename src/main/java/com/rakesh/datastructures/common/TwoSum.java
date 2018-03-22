@@ -3,8 +3,46 @@ package com.rakesh.datastructures.common;
 import java.util.HashMap;
 
 public class TwoSum {
+	
+	class TwoSumClass{
+		
+		private HashMap<Integer, Integer> ds = new HashMap<>();
+		
+		public void add(int num){
+			
+			if(ds.containsKey(num)){
+				ds.put(num, ds.get(num)+1);
+			}
+			else{
+				ds.put(num, 1);
+			}
+		}
+		
+		public boolean find(int sum){
+			
+			for(Integer key : ds.keySet()){
+				int target = sum - key;
+				if(ds.containsKey(target)){
+					//Consider i/p 3,6 and sum to be found is 6. This next line will
+					//handle it.
+					if(key == target && ds.get(key) < 2)
+						continue;
+					return true;
+				}
+			}
+			return false;
+		}
+	}
 
 	public static void main(String[] a) {
+		
+		TwoSumClass ts = new TwoSum().new TwoSumClass();
+		ts.add(3);
+		ts.add(12);
+		ts.add(10);
+		ts.add(4);
+		
+		System.out.println(ts.find(11));
 
 		int[] arr = { 2, 4, 5, 8, 10, 19, 22, 38, 100, 101 };
 
@@ -17,7 +55,6 @@ public class TwoSum {
 	}
 
 	private static int[] findIndexInSortedArray(int val, int[] arr) {
-		// TODO Auto-generated method stub
 
 		int i = 0, j = arr.length - 1;
 

@@ -33,7 +33,7 @@ public class LongestIncreasingSubsequence {
 		Arrays.fill(max, 1);
 
 		int result = 1;
-		for (int i = 0; i < a.length; i++) {
+		for (int i = 1; i < a.length; i++) {
 			for (int j = 0; j < i; j++) {
 				if (a[i] > a[j]) {
 					max[i] = Math.max(max[i], max[j] + 1);
