@@ -22,7 +22,7 @@ public class WordBreak {
 		hs.add("jain");
 		hs.add("the");
 		hs.add("problem");
-		String s = "thisissumitjain";
+		String s = "thishglvkjbissumitjain";
 
 		WordBreak ws = new WordBreak();
 
@@ -36,7 +36,7 @@ public class WordBreak {
 
 	public boolean findUsingDP(String s, HashSet<String> dict, HashSet<String> memory, String answer, int count) {
 		if (s.length() == 0) {
-			System.out.println(count + answer);
+			System.out.println(count + " " +answer);
 			return true;
 		} else if (memory.contains(s)) {
 			return false;
