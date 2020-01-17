@@ -15,4 +15,25 @@ public class InsertBinarySearchTree {
 
 		return root;
 	}
+
+	public static BTreeNode iterInsertNode(BTreeNode root, int val) {
+
+		BTreeNode node = new BTreeNode(val);
+		BTreeNode current = root, prev = null;
+
+		while (current != null) {
+			prev = current;
+			if (val > current.data) {
+				current = current.right;
+			} else {
+				current = current.left;
+			}
+		}
+		if (prev.data > val) {
+			prev.left = node;
+		} else {
+			prev.right = node;
+		}
+		return root;
+	}
 }

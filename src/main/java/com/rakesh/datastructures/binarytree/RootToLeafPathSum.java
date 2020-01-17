@@ -1,11 +1,13 @@
 package com.rakesh.datastructures.binarytree;
 
 import java.util.ArrayList;
+import java.util.List;
+
 
 /*Given a binary tree and a number, return true if the tree has a root-to-leaf path such that adding up all the 
-values along the path equals the given number. Return false if no such path can be found.
-Also print all the path nodes which lead to the sum;
-*/
+ values along the path equals the given number. Return false if no such path can be found.
+ Also print all the path nodes which lead to the sum;
+ */
 public class RootToLeafPathSum {
 
 	public static void main(String[] a) {
@@ -17,60 +19,33 @@ public class RootToLeafPathSum {
 		tree.left.right = new BTreeNode(5);
 		tree.right.left = new BTreeNode(9);
 
-		//System.out.println(hasPathToSum(tree, 21));
-
-		printNodesToSumPath(tree, 21, new ArrayList<Integer>());
-
-	}
-	
-	private static void printNodesToSumPath(BTreeNode root, int sum, ArrayList<Integer> path) {
-
-		if (root == null)
-			return;
-
-		path.add(root.data);
-
-		int diff = sum - root.data;
-
-		if (diff == 0 && root.left == null && root.right == null) {
-			printList(path);
-			return;
-		}
-
-		if (root.left != null) {
-			printNodesToSumPath(root.left, diff, path);
-		}
-
-		if (root.right != null) {
-			printNodesToSumPath(root.right, diff, path);
-		}
+		ArrayList<BTreeNode> list = new ArrayList<BTreeNode>();
+		System.out.println(hasPathToSum(tree, 21,list));
+		printList(list);
 	}
 
-	private static boolean hasPathToSum(BTreeNode root, int sum) {
+	private static boolean hasPathToSum(BTreeNode root, int sum,
+			List<BTreeNode> list) {
 
-		if (root == null)
-			return sum == 0;
-
-		boolean flag = false;
-		int diff = sum - root.data;
-
-		if (diff == 0 && root.left == null && root.right == null)
+		if(root == null)
+			return false;
+		if(root.data == sum && root.left == null && root.right == null){
+			list.add(root);
 			return true;
-
-		if (root.left != null)
-			flag = flag || hasPathToSum(root.left, diff);
-
-		if (root.right != null)
-			flag = flag || hasPathToSum(root.right, diff);
-
-		return flag;
+		}
+		
+		if(hasPathToSum(root.right, sum-root.data,list) || hasPathToSum(root.left, sum-root.data,list)){
+			list.add(root);
+			return true;
+		}
+		return false;
 	}
 
-	private static void printList(ArrayList<Integer> data) {
+	private static void printList(ArrayList<BTreeNode> data) {
 
-		for (int e : data)
-			System.out.print(e + ",");
-		
+		for (BTreeNode e : data)
+			System.out.print(e.data + ",");
+
 		System.out.println("");
 
 	}

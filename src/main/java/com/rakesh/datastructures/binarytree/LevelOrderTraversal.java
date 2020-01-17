@@ -1,5 +1,6 @@
 package com.rakesh.datastructures.binarytree;
 
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -22,23 +23,20 @@ public class LevelOrderTraversal {
 			return; 
 		
 		
-		Queue<BTreeNode> queue = new LinkedList<BTreeNode>();
-		queue.add(root);
+		Deque<BTreeNode> queue = new LinkedList<BTreeNode>();
+		queue.addLast(root);
 		
 		while(!queue.isEmpty()){
 			
-			BTreeNode tempNode  = queue.poll();
+			BTreeNode tempNode  = queue.removeFirst();
 			
-			System.out.print(tempNode.data +  " ");
 			if(tempNode.left != null){
-				queue.add(tempNode.left);
+				queue.addLast(tempNode.left);
 			}
 			
 			if(tempNode.right != null){
-				queue.add(tempNode.right);
+				queue.addLast(tempNode.right);
 			}
-			
-			
 		}
 	}
 
